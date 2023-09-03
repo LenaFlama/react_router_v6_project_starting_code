@@ -5,14 +5,13 @@ import PetDetailsNotFound from './pages/petDetailsNotFound';
 import Root from './components/root';
 import { RouterProvider, createBrowserRouter,createRoutesFromElements, Route } from 'react-router-dom' 
 
-// Add react-router-dom imports
 
-// create router with JSX Route elements
 const appRouter = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<Root/>}>
     <Route index element={<HomePage></HomePage>}></Route>
     <Route path="/:type" element={<HomePage/>}></Route>
     <Route path="/:type/:id" element={<PetDetailsPage/>}></Route>
+    <Route path='/search' element={<SearchPage/>}></Route>
   </Route>
 ));
 
@@ -20,7 +19,6 @@ const appRouter = createBrowserRouter(createRoutesFromElements(
 
 function App() {
   return (
-    // replace below with a Router Provider
     <RouterProvider router={appRouter}>REPLACE ME</RouterProvider>
   );
 }
